@@ -2,7 +2,7 @@
 from __future__ import unicode_literals
 
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 
 from .forms import CommentForm, PostForm
@@ -51,3 +51,8 @@ def comment_create(request, post_id):
     else:
         return render(request, 'blog/post_detail.html',
                       {'post': post, 'form': form})
+
+
+def alive(request):
+    '''For devops' talk'''
+    return HttpResponse('Ok')

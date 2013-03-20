@@ -20,8 +20,9 @@
           <li><a href="{% url 'publish' %}">Publish</a></li>
         </ul>
         <p class="nav pull-right">
+          {{ user }} at {{ request.META.SERVER_NAME }} |
           {% if user.is_authenticated %}
-          {{ user }} at {{ request.META.SERVER_NAME }} | <a href="{% url 'logout' %}">Logout</a></li>
+          <a href="{% url 'logout' %}">Logout</a></li>
           {% endif %}
         </p>
      </div>
